@@ -1,0 +1,28 @@
+
+1.employess and office to table data joining:
+SELECT  lastname,firstname,email,jobTitle,city,state,country FROM employees, offices 
+WHERe offices.officecode=employess.officecode;
+
+2.customers and orders and payments tada joining:
+SELECT contactLastName,contactFirstName,phone,city,status,orderDate,amount FROM customers,orders,payments 
+WHERE customers.customerNumber =orders.customerNumber=payments.customerNumber;
+
+3.create user 
+ create user'ashraful'@'localhost' identified by 'asraful';
+
+4.drop user 
+drop user 'ashraful'@'localhost';
+
+5.parmition user data access
+ GRANT SELECT,INSETR ON round50.* to 'ashraful'@'localhost';
+
+6. show databasese;
+7. use round50;
+8. show tables;
+8. describe employees;
+
+
+
+
+
+

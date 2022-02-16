@@ -1,0 +1,44 @@
+############# BEFORE UPDATE
+
+DELIMITER $$
+
+CREATE TRIGGER before_users_update
+BEFORE UPDATE
+ON users FOR EACH ROW
+BEGIN
+    INSERT INTO users_arcive(user_id,firstname,lastname,email,reg_date,action,action_time)
+    VALUES(OLD.id,OLD.firstname,OLD.lastname,OLD.email,OLD.reg_date,'UPDATE', NOW());
+END$$    
+
+DELIMITER ;
+
+############ TRIGGER AFTER INSERT
+
+DELIMITER $$
+
+CREATE TRIGGER after_users_entry
+AFTER INSERT
+ON users FOR EACH ROW
+BEGIN
+    INSERT INTO users_arcive(user_id,firstname,lastname,email,reg_date,action,action_time)
+    VALUES(new.id,new.firstname,new.lastname,new.email,new.reg_date,'INSERT', NOW());
+END$$    
+
+DELIMITER ;
+########### TRIGGER BEFORE DELETE
+
+
+DELIMITER $$
+
+CREATE TRIGGER before_users_delete
+BEFORE delete
+ON users FOR EACH ROW
+BEGIN
+    INSERT INTO users_arcive(user_id,firstname,lastname,email,reg_date,action,action_time)
+    VALUES(OLD.id,OLD.firstname,OLD.lastname,OLD.email,OLD.reg_date,'DELETE', NOW());
+END$$    
+
+DELIMITER ;
+
+
+

@@ -1,0 +1,25 @@
+1.mysql -h localhost -u root -p //press enter
+2.show database; //swmiclone mendetory
+3.use round50 // round50 folder name
+4.show tables; // tablw dekhar jonno
+5. create table tablename; //table dekhar jonno
+6.drop table tablename //table detete dyar jonno
+
+
+insert: insert employees(id,firstname,lastname) values ('126774','ashraful','islam');
+update :update employees set fieldname ='' where id =100;
+delete: delete from employess where employeenumber = 1370;
+
+
+
+
+prectice link:https://www.mysqltutorial.org
+
+
+CREATE TABLE employees(
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50),
+reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)

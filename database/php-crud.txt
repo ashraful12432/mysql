@@ -1,0 +1,18 @@
+pwad50-php-crud
+student
+id (int auto increment),
+name (string),
+email (string), 
+phone (string),
+gender enum(male,female),
+
+DELIMITER//
+CREATE PROCEDURE Getofficebycountry(
+    IN countryName VARCHAR(255)
+    )
+    BEGIN
+    SELECT *
+    FROM offices
+    WHERE country = counrtyName;
+    END//
+    DELIMITER ;

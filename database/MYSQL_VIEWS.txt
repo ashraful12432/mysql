@@ -1,0 +1,20 @@
+## view code JOININT QUERY EMPLOYEES + OFFICES table
+
+ 
+SELECT employeeNumber,lastName,firstName,jobTitle,city,country,phone FROM employees,offices WHERE
+offices.officeCode=employees.officeCode;
+
+
+CREATE VIEW employees_conact_view AS
+
+SELECT employeeNumber, CONCAT(firstName,' ',lastName) AS fullname,jobTitle,city,country,phone FROM employees emp,offices off WHERE
+off.officeCode=emp.officeCode
+
+###orders + ordersdetails
+
+CREATE VIEW orders_itrm_view AS
+SELECT quantityOrdered,priceEach,requiredDate,status,shippedDate FROM orders ord, ordersdetails orded WHERE 
+ord.orderNumber = orded.orderNumber;
+
+
+
